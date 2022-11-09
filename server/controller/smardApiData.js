@@ -22,7 +22,12 @@ const getStartTime = async (req, res) => {
 
 let commonTime;
 
-const getBrownCoalAndSetCommonTime = async (req, res, startTime, energyData) => {
+const getBrownCoalAndSetCommonTime = async (
+  req,
+  res,
+  startTime,
+  energyData
+) => {
   const url = `https://www.smard.de/app/chart_data/1223/DE/1223_DE_quarterhour_${startTime}.json`;
   const response = await fetch(url);
   const data = await response.json();
@@ -35,6 +40,7 @@ const getBrownCoalAndSetCommonTime = async (req, res, startTime, energyData) => 
       }
     }
   };
+  energyData.commonTime = commonTime;
   energyData.brownCoal = freshData(data.series);
 };
 
