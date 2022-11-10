@@ -2,7 +2,6 @@
 const router = require('express').Router();
 const api = require('./controller/smardApiData');
 
-// router.get('/startTime', api.getStartTime );
 router.get('/energyData', api.getEnergyData );
 
 
