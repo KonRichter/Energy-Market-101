@@ -267,6 +267,7 @@ const calculateRoundedValues = (energyData) => {
   // console.log("MWh Total: " + sumMWh);
   for (let i = 0;i<energyData.energySources.length; i++) {
     energyData.energySources[i].push(energyData.energySources[i][1]/sumMWh*100)
+    // console.log("Bruchteil ist: " +energyData.energySources[i][0] + energyData.energySources[i][1]/sumMWh*100 )
   }
   energyData.energySources = roundByLargestRemainder(energyData.energySources);
 }
