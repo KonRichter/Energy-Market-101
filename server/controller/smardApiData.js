@@ -225,6 +225,52 @@ const getNaturalGas = async (startTime, energyData) => {
     )
 };
 
+const roundByLargestRemainder = (arr) => {
+    let sum = 0;
+    let valuePartsArr = arr.map((value, index) => {
+      // Get rounded down integer values.
+      
+      let integerValue = Math.floor(value[2]);
+      sum += integerValue;
+      return {
+          energySource: value[0],
+          mwhValue: value[1],
+          integer: integerValue, // Integer part of the value
+          decimal: value[2] % 1, // Decimal part of the value
+          originalIndex: index  // Used to return values in original order.
+      }
+    })
+ 
+    if (sum != 100) {
+      // Sort values by decimal part
+      valuePartsArr = valuePartsArr.sort(x => x.decimal);
+ 
+      const diff = 100 - sum;
+      let i = 0;
+ 
+      // Distribute the difference.
+      while (i < diff) {
+        valuePartsArr[i].integer++;
+        i++;
+      }
+    }
+    
+    return valuePartsArr.sort(x => x.originalIndex).map(p => [p.energySource, p.mwhValue, p.integer]);
+  
+}
+
+const calculateRoundedValues = (energyData) => {
+  let sumMWh = 0;
+  for (let i = 0;i<energyData.energySources.length; i++) {
+    sumMWh+=energyData.energySources[i][1];
+  }
+  // console.log("MWh Total: " + sumMWh);
+  for (let i = 0;i<energyData.energySources.length; i++) {
+    energyData.energySources[i].push(energyData.energySources[i][1]/sumMWh*100)
+  }
+  energyData.energySources = roundByLargestRemainder(energyData.energySources);
+}
+
 exports.getEnergyData = async (req, res) => {
   try {
     const startTime = await getStartTime(req, res);
@@ -243,6 +289,7 @@ exports.getEnergyData = async (req, res) => {
     await getBlackCoal( startTime, energyData);
     await getPumpedStorageEnergy(startTime, energyData);
     console.log('Common Time is: ' + commonTime);
+    calculateRoundedValues(energyData);
     res.status(200);
     res.send(energyData);
   } catch (e) {
