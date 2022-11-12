@@ -243,8 +243,11 @@ const roundByLargestRemainder = (arr) => {
  
     if (sum != 100) {
       // Sort values by decimal part
-      valuePartsArr = valuePartsArr.sort(x => x.decimal);
- 
+      // console.log("Unsorted: " + valuePartsArr[0].energySource);
+      
+      valuePartsArr = valuePartsArr.sort((x,y) => y.decimal - x.decimal);
+      // console.log("Sorted: " + valuePartsArr[0].energySource);
+      
       const diff = 100 - sum;
       let i = 0;
  
@@ -255,11 +258,13 @@ const roundByLargestRemainder = (arr) => {
       }
     }
     
-    return valuePartsArr.sort(x => x.originalIndex).map(p => [p.energySource, p.mwhValue, p.integer]);
+    return valuePartsArr.sort((x,y) => x.originalIndex - y.originalIndex).map(p => [p.energySource, p.mwhValue, p.integer]);
   
 }
 
 const calculateRoundedValues = (energyData) => {
+  // console.log(energyData.energySources[3][0]);
+  // energyData.energySources[3][1] = 0;
   let sumMWh = 0;
   for (let i = 0;i<energyData.energySources.length; i++) {
     sumMWh+=energyData.energySources[i][1];
@@ -270,6 +275,15 @@ const calculateRoundedValues = (energyData) => {
     // console.log("Bruchteil ist: " +energyData.energySources[i][0] + energyData.energySources[i][1]/sumMWh*100 )
   }
   energyData.energySources = roundByLargestRemainder(energyData.energySources);
+  const checkSum = (arr) => {
+    let sum = 0;
+    for (let i = 0; i<arr.length; i++) {
+      sum += energyData.energySources[i][2]
+    } 
+    return sum;
+  }
+  console.log(checkSum(energyData.energySources));
+  
 }
 
 exports.getEnergyData = async (req, res) => {
