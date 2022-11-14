@@ -269,7 +269,7 @@ const calculateRoundedValues = (energyData) => {
   console.log(checkSum(energyData.energySources));
 };
 
-module.exports.getEnergyData = async (req, res) => {
+module.exports.getEnergyDataEurope = async (req, res) => {
   try {
     const startTime = await getStartTime(req, res);
     console.log('Start Time is: ' + startTime);

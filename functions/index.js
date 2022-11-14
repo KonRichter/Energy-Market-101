@@ -13,15 +13,15 @@ const api = require('./controller/smardApiData');
 const express = require('express');
 const cors = require('cors');
 // const path = require('path');
-const app = express();
+const appEurope = express();
 // const router = require('./router.js');
 // const PORT = process.env.PORT || 3001;
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+appEurope.use(cors());
+appEurope.use(express.json());
+appEurope.use(express.urlencoded({ extended: false }));
 
-app.get('/testing', api.getEnergyData);
+appEurope.get('/testing', api.getEnergyDataEurope);
 
 //app.use('/', express.static(path.join(__dirname, 'client')));
 
@@ -31,4 +31,4 @@ app.get('/testing', api.getEnergyData);
 //   console.log(`Server up and running at http://localhost:${PORT}`); // eslint-disable-line no-console
 // });
 
-exports.app = functions.https.onRequest(app);
+exports.appEurope = functions.region('europe-west3').https.onRequest(appEurope);
