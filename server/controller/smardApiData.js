@@ -167,14 +167,20 @@ const getPhotovoltaics = async ( startTime, energyData) => {
   const freshData = (arr) => {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i][0] === commonTime) {
-        return arr[i][1];
+        console.log("Solar Time: " + arr[i][0]);
+        return arr[i][1]
+        // return [arr[i][1], arr[i][0]];
       }
     }
   };
+  
   // energyData.photovoltaics = freshData(data.series);
   energyData.energySources.push(
     ["Solar", freshData(data.series)]
     )
+  // energyData.energySources.push(
+  //   ["Solar", freshData(data.series)[0], freshData(data.series)[1]]
+  //   )
 };
 
 const getBlackCoal = async (startTime, energyData) => {
@@ -305,6 +311,7 @@ exports.getEnergyData = async (req, res) => {
     await getPumpedStorageEnergy(startTime, energyData);
     console.log('Common Time is: ' + commonTime);
     calculateRoundedValues(energyData);
+    console.log(energyData);
     res.status(200);
     res.send(energyData);
   } catch (e) {
