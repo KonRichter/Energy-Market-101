@@ -1,0 +1,105 @@
+.iconbar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 10px;
+  height: 65vh;
+  /* border: 2px solid black; */
+}
+
+hr {
+  margin-bottom: 3px;
+}
+
+.energy-icon {
+  /* border: 2px solid lightblue; */
+  border-radius: 4px;
+  width: 70px;
+  padding: 5px 20px;
+  margin: 0px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  background: #f09819; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #edde5d,
+    #f09819
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #edde5d,
+    #f09819
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.energy-icon:hover {
+  opacity: 0.8;
+}
+
+.iconbar span {
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+#name-energy-source {
+  margin-bottom: 5px;
+}
+
+button {
+  width: 100px;
+  height: 35px;
+  border-radius: 4px;
+  margin-top: -10px;
+  /* background-color: rgba(0, 0, 0, 0.601); */
+  /* color: white; */
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: lightgrey;
+  transition: 0.3s;
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .iconbar {
+    padding: 6px;
+  }
+  .energy-icon {
+    padding: 5px 20px;
+  }
+  hr {
+    margin-bottom: -4px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .iconbar {
+    width: 900px;
+    padding: 3px;
+  }
+  hr {
+    margin-bottom: -7px;
+  }
+}
+
+@media (max-width: 600px) {
+  .iconbar {
+    padding: 2px;
+    height: 80vh;
+  }
+  .energy-icon {
+    width: 70px;
+    user-select: none;
+    /* padding: 0px; */
+  }
+  .iconbar span {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1rem;
+  }
+}

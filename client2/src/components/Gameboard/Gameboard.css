@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display&display=swap');
+
+* {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.03rem;
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px 20px; */
+  /* background-color: rgb(250, 246, 236); */
+  background-color: white;
+}
+
+
+#icons-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 5px;
+}

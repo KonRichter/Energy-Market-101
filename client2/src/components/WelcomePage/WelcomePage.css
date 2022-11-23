@@ -1,0 +1,339 @@
+.welcome-page {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcome-starter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 15vh;
+  margin-top: 12vh;
+}
+.typewriter {
+  width: 45.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 5px;
+}
+.typewriter2 {
+  width: 39.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+.typewriter h1 {
+  font-size: 1.5rem;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typewriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 2s steps(50, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  /* typing-reverse 1.5s 2.5s steps(50, end); */ /*  hiding 0s 3s linear forwards; */
+}
+.typewriter2 h1 {
+  font-size: 1.5rem;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  visibility: hidden;
+  animation: typingAndShowUp 2s 3s steps(50, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  /* typing-reverse 1.5s 4.5s steps(50, end), */
+  /* hiding 0s 6s linear forwards; */
+}
+
+.energy-typewrite {
+  font-size: 1.5rem;
+  margin: 0px;
+  background: -webkit-linear-gradient(right, #f12711, #f5af19);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+.welcome-left {
+  align-self: flex-start;
+  /* padding: 10px 0px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5vh 5vh;
+  margin: 2vh 0px;
+  width: 80vw;
+  /* border: 2px solid lightblue; */
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #f8f9fa;
+}
+
+.welcome-right {
+  align-self: flex-end;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5vh 5vh;
+  margin: 2vh 0px;
+  width: 80vw;
+  /* border: 2px solid lightblue; */
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background-color: #f5c4001c;
+}
+
+.energy-pic {
+  width: 45vw;
+  border-radius: 5%;
+  margin: 0px;
+  cursor: default;
+}
+
+.caption-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 5px;
+  width: 40vw;
+}
+
+.caption {
+  font-size: 1.1rem;
+}
+
+.energy-pic-text {
+  font-size: 1.5rem;
+  line-height: 3vw;
+  font-weight: bold;
+  width: 30vw;
+  /* border: 2px solid black */
+}
+
+#caveat {
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+  font-style: italic;
+  /* visibility: hidden; */
+}
+
+.energy-pic-text a {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.energy-pic-text a:hover {
+  cursor: pointer;
+  background: -webkit-linear-gradient(right, #f12711, #f5af19);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#linker {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 20px;
+  margin: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#link-button {
+  width: 25vw;
+  max-width: 400px;
+  height: 7vh;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  border-radius: 20px;
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top right,
+    #f5af19b3,
+    #f12711b9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#link-button:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+#link-button img {
+  width: 2vw;
+  margin: 0px;
+  margin-left: 0.5vw;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+  /* 0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  } */
+  /* 100% {
+    width: 0;
+  } */
+}
+
+@keyframes typingAndShowUp {
+  from {
+    width: 0;
+    visibility: visible;
+  }
+  to {
+    width: 100%;
+    visibility: visible;
+  }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+@media (max-width: 600px) {
+  #welcome-starter {
+    margin-bottom: 8vh;
+  margin-top: 8vh;
+  }
+  .typewriter {
+    width: 21.3rem;
+    padding: 0px;
+    padding-bottom: 5px;
+  }
+  .typewriter2 {
+    width: 19.1rem;
+    padding: 0px;
+  }
+  .typewriter h1 {
+    font-size: 0.7rem;
+    /* padding: 0px;
+    margin: 0px; */
+  }
+  .typewriter2 h1 {
+    font-size: 0.7rem;
+  }
+  .energy-typewrite {
+    font-size: 0.7rem;
+  }
+  .welcome-container {
+    padding: 0px;
+    margin: 0px;
+  }
+  .welcome-left {
+    width: 100%;
+    padding: 35px 0px;
+    flex-direction: column;
+  }
+  .welcome-right {
+    width: 100%;
+    padding: 35px 0px;
+    flex-direction: column;
+    flex-flow: column-reverse;
+  }
+  .caption-wrapper {
+    width: 95%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .energy-pic {
+    width: 100%;
+  }
+  .caption {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .energy-pic-text {
+    width: 90%;
+    line-height: 1.8rem;
+    font-size: 1.1rem;
+    margin: 0px;
+  }
+  .energy-pic-text a {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+  }
+  #caveat {
+    font-size: 0.8rem;
+  }
+  #linker {
+    width: 70%;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+  #innerLink {
+    width: 100%;
+  }
+  #link-button {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+  }
+  #link-button img {
+    width: 25px
+  }
+}

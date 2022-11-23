@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#german-flag {
+  width: 60px;
+}
+
+#logo {
+  width: 15vw;
+}
+
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 500;
+  font-size: 2.1rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+#time-span {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 500;
+  font-size: 2.1rem;
+  margin: 0px;
+  background: -webkit-linear-gradient(right, #4a569d, #dc2424);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#energy-span {
+  font-family: 'DM Serif Display', serif;
+  /* font-weight: 500; */
+  font-size: 2.1rem;
+  padding: 0px;
+  margin: 0px;
+  background: -webkit-linear-gradient(right, #f12711, #f5af19);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20vw;
+  max-width: 300px;
+  margin: 2vh;
+  margin-right: 5vw;
+}
+
+img {
+  margin-left: 2vw;
+  cursor: pointer;
+}
+
+.right {
+  width: 20vw;
+}
+
+.dontMove {
+  width: 50px;
+  visibility: hidden;
+}
+
+.move {
+  position: relative;
+  width: 80px;
+  animation: pretzelMove 6s normal linear;
+  z-index: 20;
+}
+
+.beerMove {
+  position: relative;
+  width: 80px;
+  animation: beerMoving 6s normal linear;
+  z-index: 20;
+}
+
+@keyframes pretzelMove {
+  0% {
+    top: 0px;
+    right: 1000px;
+  }
+  100% {
+    top: 1300px;
+    right: -500px;
+  }
+}
+
+@keyframes beerMoving {
+  0% {
+    top: 0px;
+    right: 0px;
+  }
+  100% {
+    top: 2000px;
+    right: 2000px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1300px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+  #time-span {
+    font-size: 1.6rem;
+  }
+  #energy-span {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1rem;
+    margin: 0px 25px;
+  }
+  #energy-span {
+    font-size: 1rem;
+  }
+  #time-span {
+    font-size: 1rem;
+  }
+  .right {
+    display: none;
+  }
+  .alternative-right {
+    width: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .header {
+    height: 12vh;
+  }
+  #logo {
+    width: 25vw;
+  }
+}
